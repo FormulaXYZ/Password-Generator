@@ -1,6 +1,8 @@
 # Password-Generator
 
 DISCRIPTION
+# Live Link of Password-Generator.
+[live link] (https://formulaxyz.github.io/Password-Generator/)
 
 # This is a javascript to generat a password.
 The user can Click a Button to generat a password. The user presented 

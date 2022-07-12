@@ -10,13 +10,14 @@ function writePassword() {
  
  if (passwordLength >= 8 && passwordLength <= 128){
   console.log('Requirement met');
+  alert('Requirment met')
  }else{
-  console.log('Requirement not met');
+  alert('Requirement not met');
+  return null;
  }
-// var password = eneratePassword();
-// var passwordText = document.querySelector("#password");
 
-//  passwordText.value = password;
+
+
 console.log(passwordLength);
 // prompt to ask which character to include (uppercase,lowercase,Numbers,symbols);
 var wantupperCase = confirm('Do you want to include uppercase characters ?');
@@ -47,23 +48,52 @@ if (upperCase === upperCase) {
   console.log(wantspecialCharactors)
   if(specialCharactors === specialCharactors){
     console.log('specialCharactors')
+  }
 var password = ""
-// for(i = 0 ; i<= Number(passwordLength); i++ ){
-// // 
-//  //  passwif (wantlowerCase){ord += lowerCase[Math.floor(Math.random()*lowerCase.length)]
-// }
-// }
+    
+
  var mainarray = []
+ // starts here  to include  UpperCase
+
  if (wantupperCase){
 
   mainarray = mainarray.concat(upperCase)
  }
 
- for ( i=0; i < mainarray.length; i++){
-  password += mainarray[Math.floor(Math.random()*mainarray.length)];
+// starts here use  to include  lowercase
+
+ if (wantlowerCase){
+
+  mainarray = mainarray.concat(lowerCase)
  }
+
+// starts here  to include  Numbers
+ if (wantNumbers){
+
+  mainarray = mainarray.concat(Numbers)
+ }
+
+
+
+ // starts here  to include special charactors
+ if (wantspecialCharactors){
+
+  mainarray = mainarray.concat(specialCharactors)
+ }
+
+// The code generat the password randomly using logical maths.
+
+  for (i=0 ;i < passwordLength; i++){
+    password += mainarray[Math.floor(Math.random()*mainarray.length)];
+  }
+
+  
+
 console.log(password)
+alert(password)
 }
-}
+
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
